@@ -35,7 +35,7 @@
 <h2>Publications</h2>
 
 <!-- Page Content -->
-<table style="margin: 0 auto;">
+<table style="margin: 0 auto;" id="publications_table">
 	<tr style="background-color: #FBC008;">
 		<th style="width:300px">Title</th><th style="width:75px">Year</th>
 	</tr>
@@ -46,8 +46,7 @@
 	    url: "Documents/Tylka_Publications.bib",
 	    dataType: "text",
 	    success: function(data){
-	      printTable(parseBib(data));
-	      alert("done");
+	      $("#publications_table").append(printTable(parseBib(data)));
 	    }
 	  });
 	});
