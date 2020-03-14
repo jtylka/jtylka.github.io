@@ -37,7 +37,7 @@
 <!-- Page Content -->
 <table style="margin: 0 auto;" id="publications_table">
 	<tr style="background-color: #FBC008;">
-		<th style="width:300px">Title</th><th style="width:75px">Year</th>
+		<th style="width:25px">#</th><th style="width:300px">Title</th><th style="width:75px">Year</th>
 	</tr>
 	<script>
 	$(document).ready(function(){
@@ -103,7 +103,7 @@
 			} else if (array[ii]["doi"].length > 0) {
 				htmlTitle = '<a href="http://dx.doi.org/' + array[ii]["doi"] + '" target="_blank">' + htmlTitle + '</a>';
 			}
-			htmlOut = htmlOut + '<tr><td>'+ htmlTitle +'</td><td>' + array[ii]["year"] + '</td></tr>\n';
+			htmlOut = htmlOut +'<tr><td>'+ (ii+1).toString() +'</td><td>'+ htmlTitle +'</td><td>'+ array[ii]["year"] +'</td></tr>\n';
 		}
 		return htmlOut;
 	}
