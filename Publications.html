@@ -94,8 +94,8 @@
 
 	function printTable(array){
 		var htmlOut = '';
-		var htmlTitle = array[ii][0];
 		for (var ii=0; ii<array.length; ii++){
+			var htmlTitle = array[ii][0];
 			if (array[ii][2].length > 0){
 				htmlTitle = '<a href="' + array[ii][2] + '" target="_blank">' + htmlTitle + '</a>';
 			}
