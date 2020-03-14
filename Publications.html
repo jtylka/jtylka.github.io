@@ -98,9 +98,9 @@
 		var htmlOut = '';
 		for (var ii=0; ii<array.length; ii++){
 			var htmlTitle = array[ii]["title"];
-			if (array[ii][2].length > 0){
+			if (array[ii]["url"].length > 0){
 				htmlTitle = '<a href="' + array[ii]["url"] + '" target="_blank">' + htmlTitle + '</a>';
-			} else if (array[ii][3].length > 0) {
+			} else if (array[ii]["doi"].length > 0) {
 				htmlTitle = '<a href="http://dx.doi.org/' + array[ii]["doi"] + '" target="_blank">' + htmlTitle + '</a>';
 			}
 			htmlOut = htmlOut + '<tr><td>'+ htmlTitle +'</td><td>' + array[ii]["year"] + '</td></tr>\n';
