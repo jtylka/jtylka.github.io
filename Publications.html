@@ -85,7 +85,7 @@
 		var pos2 = Math.min(str.length, str.lastIndexOf('}'), str.lastIndexOf('"'));
 		if (pos2 >= (str.length - 3))
 		{
-			str = str.slice(0,pos2);
+			str = str.slice(0,pos2-1);
 		}
 		return str;
 	}
