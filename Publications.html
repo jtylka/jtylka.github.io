@@ -59,7 +59,8 @@
 			var entrytitle = trimBounds(pullBibItem(entry,"title ="));
 			var entryyear = trimBounds(pullBibItem(entry,"year ="));
 			var entryurl = trimBounds(pullBibItem(entry,"url ="));
-			bibArray[ii] = [entrytitle, entryyear, entryurl];
+			var entrydoi = trimBounds(pullBibItem(entry,"doi ="));
+			bibArray[ii] = [entrytitle, entryyear, entryurl, entrydoi];
 		}
 		return bibArray;
 	}
@@ -69,7 +70,7 @@
 		if (pos1 == -1) {
 			return "";
 		}
-		var pos2 = str.indexOf(",\n",pos1);
+		var pos2 = str.indexOf("\n",pos1);
 		var item = str.slice(pos1+key.length,pos2);
 		return item.trim();
 	}
@@ -98,6 +99,8 @@
 			var htmlTitle = array[ii][0];
 			if (array[ii][2].length > 0){
 				htmlTitle = '<a href="' + array[ii][2] + '" target="_blank">' + htmlTitle + '</a>';
+			} else if (array[ii][3].length > 0) {
+				htmlTitle = '<a href="http://dx.doi.org/' + array[ii][3] + '" target="_blank">' + htmlTitle + '</a>';
 			}
 			htmlOut = htmlOut + '<tr><td>'+ htmlTitle +'</td><td>' + array[ii][1] + '</td></tr>\n';
 		}
