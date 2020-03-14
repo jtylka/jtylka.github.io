@@ -71,22 +71,19 @@
 		}
 		var pos2 = str.indexOf(",\n",pos1);
 		var item = str.slice(pos1+key.length,pos2);
-		return item;
+		return item.trim();
 	}
 
 	function trimBounds(str){
 		var pos1 = 0;
-		pos1 = Math.max(pos1,str.indexOf('{'));
-		pos1 = Math.max(pos1,str.indexOf('"'));
-		if (pos1 <= 2)
+		var pos1 = Math.max(0, str.indexOf('{'), str.indexOf('"'));
+		if (pos1 <= 3)
 		{
 			str = str.slice(pos1+1,str.length);
 		}
 
-		var pos2 = str.length;
-		pos2 = Math.min(pos2,str.lastIndexOf('}'));
-		pos2 = Math.min(pos2,str.lastIndexOf('"'));
-		if ((str.length - pos2) <= 2)
+		var pos2 = Math.min(str.length, str.lastIndexOf('}'), str.lastIndexOf('"'));
+		if (pos2 >= (str.length - 3))
 		{
 			str = str.slice(0,pos2);
 		}
