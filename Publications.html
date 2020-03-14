@@ -56,21 +56,40 @@
 		var bibArray = [];
 		for (var ii=0; ii<entries.length; ii++){
 			var entry = entries[ii];
-			var key = "title = ";
-			var pos1 = entry.indexOf(key);
-			var pos2 = entry.indexOf(",\n",pos1);
-			var entrytitle = entry.slice(pos1+key.length+1,pos2-1);
-			var key = "year = ";
-			var pos1 = entry.indexOf(key);
-			var pos2 = entry.indexOf(",\n",pos1);
-			var entryyear = entry.slice(pos1+key.length+1,pos2-1);
-			var key = "url = ";
-			var pos1 = entry.indexOf(key);
-			var pos2 = entry.indexOf(",\n",pos1);
-			var entryurl = entry.slice(pos1+key.length+1,pos2-1);
+			var entrytitle = trimBounds(pullBibItem(entry,"title = "));
+			var entryyear = trimBounds(pullBibItem(entry,"year = "));
+			var entryurl = trimBounds(pullBibItem(entry,"url = "));
 			bibArray[ii] = [entrytitle, entryyear, entryurl];
 		}
 		return bibArray;
+	}
+
+	function pullBibItem(str,key){
+		var pos1 = str.indexOf(key);
+		if (pos1 == -1) {
+			return "";
+		}
+		var pos2 = str.indexOf(",\n",pos1);
+		var item = str.slice(pos1+key.length,pos2-1);
+		return item;
+	}
+
+	function trimBounds(str){
+		var pos1 = 0;
+		pos1 = max(pos1,str.indexOf('{'));
+		pos1 = max(pos1,str.indexOf('"'));
+		if (pos1 <= 2)
+		{
+			str = str.slice(pos1+1,str.length);
+		}
+
+		var pos2 = str.length;
+		pos2 = min(pos2,str.lastIndexOf('}'));
+		pos2 = min(pos2,str.lastIndexOf('"'));
+		if (pos1 <= 2)
+		{
+			str = str.slice(0,pos2-1);
+		}
 	}
 
 	function printTable(array){
