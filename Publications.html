@@ -76,16 +76,16 @@
 
 	function trimBounds(str){
 		var pos1 = 0;
-		pos1 = max(pos1,str.indexOf('{'));
-		pos1 = max(pos1,str.indexOf('"'));
+		pos1 = Math.max(pos1,str.indexOf('{'));
+		pos1 = Math.max(pos1,str.indexOf('"'));
 		if (pos1 <= 2)
 		{
 			str = str.slice(pos1+1,str.length);
 		}
 
 		var pos2 = str.length;
-		pos2 = min(pos2,str.lastIndexOf('}'));
-		pos2 = min(pos2,str.lastIndexOf('"'));
+		pos2 = Math.min(pos2,str.lastIndexOf('}'));
+		pos2 = Math.min(pos2,str.lastIndexOf('"'));
 		if (pos1 <= 2)
 		{
 			str = str.slice(0,pos2-1);
