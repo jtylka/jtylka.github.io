@@ -56,9 +56,9 @@
 		var bibArray = [];
 		for (var ii=0; ii<entries.length; ii++){
 			var entry = entries[ii];
-			var entrytitle = trimBounds(pullBibItem(entry,"title = "));
-			var entryyear = trimBounds(pullBibItem(entry,"year = "));
-			var entryurl = trimBounds(pullBibItem(entry,"url = "));
+			var entrytitle = trimBounds(pullBibItem(entry,"title ="));
+			var entryyear = trimBounds(pullBibItem(entry,"year ="));
+			var entryurl = trimBounds(pullBibItem(entry,"url ="));
 			bibArray[ii] = [entrytitle, entryyear, entryurl];
 		}
 		return bibArray;
@@ -75,25 +75,31 @@
 	}
 
 	function trimBounds(str){
+		var delimPos = 0;
 		var pos1 = 0;
-		var pos1 = Math.max(0, str.indexOf('{'), str.indexOf('"'));
-		if (pos1 <= 3)
-		{
-			str = str.slice(pos1+1,str.length);
-		}
+		var pos2 = str.length;
 
-		var pos2 = Math.min(str.length, str.lastIndexOf('}'), str.lastIndexOf('"'));
-		if (pos2 >= (str.length - 3))
-		{
-			str = str.slice(0,pos2-1);
-		}
-		return str;
+		delimPos = Math.max(0,str.indexOf('{'));
+		pos1 = (delimPos > 3) ? pos1 : delimPos;
+		delimPos = Math.max(0,str.indexOf('"'));
+		pos1 = (delimPos > 3) ? pos1 : delimPos;
+
+		delimPos = str.lastIndexOf('}');
+		pos2 = (delimPos < (str.length - 3)) ? pos2 : delimPos;
+		delimPos = str.lastIndexOf('"');
+		pos2 = (delimPos < (str.length - 3)) ? pos2 : delimPos;
+
+		return str.slice(pos1+1,pos2);
 	}
 
 	function printTable(array){
 		var htmlOut = '';
+		var htmlTitle = array[ii][0];
 		for (var ii=0; ii<array.length; ii++){
-			htmlOut = htmlOut + '<tr><td><a href="' + array[ii][2] + '" target="_blank">' + array[ii][0] + '</a></td><td>' + array[ii][1] + '</td></tr>\n';
+			if (array[ii][2].length > 0){
+				htmlTitle = '<a href="' + array[ii][2] + '" target="_blank">' + htmlTitle + '</a>';
+			}
+			htmlOut = htmlOut + '<tr><td>'+ htmlTitle +'</td><td>' + array[ii][1] + '</td></tr>\n';
 		}
 		return htmlOut;
 	}
