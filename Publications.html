@@ -51,8 +51,7 @@
 	  });
 	});
 
-	function parseBib(input){
-		var file = input;
+	function parseBib(file){
 		var entries = file.split("\n@");
 		var bibArray = [];
 		for (var ii=0; ii<entries.length; ii++){
@@ -69,9 +68,11 @@
 	}
 
 	function printTable(array){
+		var htmlOut = '';
 		for (var ii=0; ii<array.length; ii++){
-			document.write('<tr><td>' + array[ii][0] + '</td><td>' + array[ii][1] + '</td></tr>\n');
+			htmlOut = htmlOut + '<tr><td>' + array[ii][0] + '</td><td>' + array[ii][1] + '</td></tr>\n';
 		}
+		return htmlOut;
 	}
 	</script>
 </table>
