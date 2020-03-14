@@ -56,13 +56,19 @@
 		var bibArray = [];
 		for (var ii=0; ii<entries.length; ii++){
 			var entry = entries[ii];
-			var pos1 = entry.indexOf("title = ");
+			var key = "title = ";
+			var pos1 = entry.indexOf(key);
 			var pos2 = entry.indexOf(",\n",pos1);
-			var entrytitle = entry.slice(pos1,pos2);
-			var pos1 = entry.indexOf("year = ");
+			var entrytitle = entry.slice(pos1+key.length,pos2-1);
+			var key = "year = ";
+			var pos1 = entry.indexOf(key);
 			var pos2 = entry.indexOf(",\n",pos1);
-			var entryyear = entry.slice(pos1,pos2);
-			bibArray[ii] = [entrytitle, entryyear];
+			var entryyear = entry.slice(pos1+key.length,pos2-1);
+			var key = "url = ";
+			var pos1 = entry.indexOf(key);
+			var pos2 = entry.indexOf(",\n",pos1);
+			var entryurl = entry.slice(pos1+key.length,pos2-1);
+			bibArray[ii] = [entrytitle, entryyear, entryurl];
 		}
 		return bibArray;
 	}
@@ -70,7 +76,7 @@
 	function printTable(array){
 		var htmlOut = '';
 		for (var ii=0; ii<array.length; ii++){
-			htmlOut = htmlOut + '<tr><td>' + array[ii][0] + '</td><td>' + array[ii][1] + '</td></tr>\n';
+			htmlOut = htmlOut + '<tr><td><a href="' + array[ii][2] + '" target="_blank">' + array[ii][0] + '</a></td><td>' + array[ii][1] + '</td></tr>\n';
 		}
 		return htmlOut;
 	}
