@@ -70,7 +70,7 @@
 			return "";
 		}
 		var pos2 = str.indexOf(",\n",pos1);
-		var item = str.slice(pos1+key.length,pos2-1);
+		var item = str.slice(pos1+key.length,pos2);
 		return item;
 	}
 
@@ -86,9 +86,9 @@
 		var pos2 = str.length;
 		pos2 = Math.min(pos2,str.lastIndexOf('}'));
 		pos2 = Math.min(pos2,str.lastIndexOf('"'));
-		if (pos1 <= 2)
+		if ((str.length - pos2) <= 2)
 		{
-			str = str.slice(0,pos2-1);
+			str = str.slice(0,pos2);
 		}
 		return str;
 	}
