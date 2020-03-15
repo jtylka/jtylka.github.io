@@ -4,7 +4,6 @@ function generateNavigationMenu(url){
   if (page == 'jtylka.github.io' || page == 'index.html' || page == '') {
     page = '.';
   }
-  alert(page);
   var pageLinks = ['.','Projects.html','Publications.html','Patents.html'];
   var pageNames = ['Home','Projects','Publications','Patents'];
   var htmlOut = '';
