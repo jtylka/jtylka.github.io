@@ -1,3 +1,20 @@
+function generateNavigationMenu(url){
+  var page = url.split("/")[-1];
+  if (page == 'jtylka.github.io' || page == 'index.html' || page == '') {
+    page = '.';
+  }
+  var pageLinks = ['.','Projects.html','Publications.html','Patents.html'];
+  var pageNames = ['Home','Projects','Publications','Patents'];
+  var htmlOut = '';
+  for (var ii=0; ii<pageLinks.length; ii++){
+    var pageName = pageNames[ii];
+    if (page == pageList[ii]) {
+      pageName = '<b>' + pageName + '</b>';
+    }
+    htmlOut = htmlOut + '<th><a class="menu" href="' + pageLinks[ii] + '">' + pageName + '</a></th>';
+  }
+}
+
 function parseBib(file){
   var entries = file.split("\n@");
   var bibArray = [];
@@ -56,9 +73,9 @@ function printTable(array){
 }
 
 function composeEmailAddress(){
-  mailPreFix = 'josephgt';
-  mailDomain = 'alumni.princeton.edu';
-  mailAddr = (mailPreFix + '@' + mailDomain);
-  mailHtml = '<th><a class="contact" href="mailto:' + mailAddr + '">Email</a></th>';
+  var mailPreFix = 'josephgt';
+  var mailDomain = 'alumni.princeton.edu';
+  var mailAddr = (mailPreFix + '@' + mailDomain);
+  var mailHtml = ('<th><a class="contact" href="mailto:' + mailAddr + '">Email</a></th>');
   return mailHtml;
 }
