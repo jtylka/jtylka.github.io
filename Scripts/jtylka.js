@@ -1,5 +1,6 @@
 function generateNavigationMenu(url){
-  var page = url.split("/")[-1];
+  var urlSplit = url.split("/");
+  var page = urlSplit[urlSplit.length-1];
   if (page == 'jtylka.github.io' || page == 'index.html' || page == '') {
     page = '.';
   }
