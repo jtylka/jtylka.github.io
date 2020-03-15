@@ -3,15 +3,16 @@ function generateNavigationMenu(url){
   if (page == 'jtylka.github.io' || page == 'index.html' || page == '') {
     page = '.';
   }
+  alert(page);
   var pageLinks = ['.','Projects.html','Publications.html','Patents.html'];
   var pageNames = ['Home','Projects','Publications','Patents'];
   var htmlOut = '';
   for (var ii=0; ii<pageLinks.length; ii++){
     var pageName = pageNames[ii];
     if (page == pageLinks[ii]) {
-      pageName = '<b>' + pageName + '</b>';
+      pageName = ('<b>' + pageName + '</b>');
     }
-    htmlOut = htmlOut + '<th><a class="menu" href="' + pageLinks[ii] + '">' + pageName + '</a></th>';
+    htmlOut = htmlOut + ('<th><a class="menu" href="' + pageLinks[ii] + '">' + pageName + '</a></th>');
   }
   return htmlOut;
 }
