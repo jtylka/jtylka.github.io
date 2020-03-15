@@ -13,6 +13,7 @@ function generateNavigationMenu(url){
     }
     htmlOut = htmlOut + '<th><a class="menu" href="' + pageLinks[ii] + '">' + pageName + '</a></th>';
   }
+  return htmlOut;
 }
 
 function parseBib(file){
