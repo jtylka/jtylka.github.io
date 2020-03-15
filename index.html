@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>Joseph G. Tylka | Research Scientist</title>
 	<link href="styles.css" rel="stylesheet" type="text/css">
+	<script src="Scripts/jtylka.js"></script>
 </head>
 <body>
 
@@ -49,12 +50,7 @@
 <table style="margin: 0 auto;">
 	<tr>
 		<th><a class="contact" href="Documents/Tylka_CV.pdf" target="_blank">CV</a></th>
-		<script>
-			mailPreFix = 'josephgt'
-			mailDomain = 'alumni.princeton.edu'
-			mailAddr = (mailPreFix + '@' + mailDomain)
-			document.write('<th><a class="contact" href="mailto:' + mailAddr + '">Email</a></th>')
-		</script>
+		<script>document.write(composeEmailAddress())</script>
 		<th><a class="contact" href="https://github.com/jtylka" target="_blank">GitHub</a></th>
 		<th><a class="contact" href="https://www.linkedin.com/in/josephgtylka/" target="_blank">LinkedIn</a></th>
 		<th><a class="contact" href="https://scholar.google.com/citations?hl=en&user=amf5PKAAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Scholar</a></th>

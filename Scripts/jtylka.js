@@ -54,3 +54,11 @@ function printTable(array){
   }
   return htmlOut;
 }
+
+function composeEmailAddress(){
+  mailPreFix = 'josephgt';
+  mailDomain = 'alumni.princeton.edu';
+  mailAddr = (mailPreFix + '@' + mailDomain);
+  mailHtml = '<th><a class="contact" href="mailto:' + mailAddr + '">Email</a></th>';
+  return mailHtml;
+}

@@ -37,7 +37,7 @@
 
 <!-- Page Content -->
 <table style="margin: 0 auto;" id="publications_table">
-	<tr style="background-color: #FBC008;">
+	<tr style="background-color: #20b2aa;">
 		<th style="width:25px">#</th><th style="width:300px">Title</th><th style="width:50px">Year</th>
 	</tr>
 	<script>
@@ -56,28 +56,6 @@
 
 <p>Complete bibliographic data can be found in this <a href="Documents/Tylka_Publications.bib" target="_blank">BibTeX</a> file. (Last updated March 14<sup>th</sup>, 2020)</p>
 
-<h3>Patents</h3>
-
-<table style="margin: 0 auto;" id="patents_table">
-	<tr style="background-color: #FBC008;">
-		<th style="width:25px">#</th><th style="width:300px">Title</th><th style="width:50px">Year</th>
-	</tr>
-	<script>
-	$(document).ready(function(){
-	  $.ajax({
-	    type: "GET",
-	    url: "Documents/Tylka_Patents.bib",
-	    dataType: "text",
-	    success: function(data){
-	      $("#patents_table").append(printTable(parseBib(data)));
-	    }
-	  });
-	});
-	</script>
-</table>
-
-<p>Complete bibliographic data can be found in this <a href="Documents/Tylka_Patents.bib" target="_blank">BibTeX</a> file. (Last updated March 14<sup>th</sup>, 2020)</p>
-
 </div>
 
 <!-- Contact Information -->
@@ -86,12 +64,7 @@
 <table style="margin: 0 auto;">
 	<tr>
 		<th><a class="contact" href="Documents/Tylka_CV.pdf" target="_blank">CV</a></th>
-		<script>
-			mailPreFix = 'josephgt'
-			mailDomain = 'alumni.princeton.edu'
-			mailAddr = (mailPreFix + '@' + mailDomain)
-			document.write('<th><a class="contact" href="mailto:' + mailAddr + '">Email</a></th>')
-		</script>
+		<script>document.write(composeEmailAddress())</script>
 		<th><a class="contact" href="https://github.com/jtylka" target="_blank">GitHub</a></th>
 		<th><a class="contact" href="https://www.linkedin.com/in/josephgtylka/" target="_blank">LinkedIn</a></th>
 		<th><a class="contact" href="https://scholar.google.com/citations?hl=en&user=amf5PKAAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Scholar</a></th>
