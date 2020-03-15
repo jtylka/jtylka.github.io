@@ -8,7 +8,7 @@ function generateNavigationMenu(url){
   var htmlOut = '';
   for (var ii=0; ii<pageLinks.length; ii++){
     var pageName = pageNames[ii];
-    if (page == pageList[ii]) {
+    if (page == pageLinks[ii]) {
       pageName = '<b>' + pageName + '</b>';
     }
     htmlOut = htmlOut + '<th><a class="menu" href="' + pageLinks[ii] + '">' + pageName + '</a></th>';
