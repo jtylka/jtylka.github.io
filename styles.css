@@ -41,6 +41,12 @@ h2 {
 	text-align: center;
 }
 
+h3 {
+	color: #000000;
+	font-weight: bold;
+	text-align: center;
+}
+
 p {
 	color: #000000;
 	text-align: justify;
