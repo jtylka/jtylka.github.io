@@ -45,7 +45,7 @@
 	    url: "Documents/Tylka_Publications.bib",
 	    dataType: "text",
 	    success: function(data){
-	      $("#publications_table").append(printTable(parseBib(data)));
+	      $("#publications_table").append(printTable(parseBib(data),["year"]));
 	    }
 	  });
 	});

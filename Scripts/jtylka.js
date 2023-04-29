@@ -26,7 +26,8 @@ function parseBib(file){
     var entryyear = trimBounds(pullBibItem(entry,"year ="));
     var entryurl = trimBounds(pullBibItem(entry,"url ="));
     var entrydoi = trimBounds(pullBibItem(entry,"doi ="));
-    bibArray[ii] = {title:entrytitle, year:entryyear, url:entryurl, doi:entrydoi};
+    var entrynote = trimBounds(pullBibItem(entry,"note ="));
+    bibArray[ii] = {title:entrytitle, year:entryyear, url:entryurl, doi:entrydoi, note:entrynote};
   }
   bibArray.sort(function(a, b){return b["year"] - a["year"]});
   return bibArray;
@@ -60,7 +61,7 @@ function trimBounds(str){
   return str.slice(pos1+1,pos2);
 }
 
-function printTable(array){
+function printTable(array,keys){
   var htmlOut = '';
   for (var ii=0; ii<array.length; ii++){
     var htmlTitle = array[ii]["title"];
@@ -69,7 +70,11 @@ function printTable(array){
     } else if (array[ii]["doi"].length > 0) {
       htmlTitle = '<a href="http://dx.doi.org/' + array[ii]["doi"] + '" target="_blank">' + htmlTitle + '</a>';
     }
-    htmlOut = htmlOut +'<tr><td>'+ (ii+1).toString() +'</td><td>'+ htmlTitle +'</td><td>'+ array[ii]["year"] +'</td></tr>\n';
+    htmlOut = htmlOut +'<tr><td>'+ (ii+1).toString() +'</td><td>'+ htmlTitle;
+    for (var jj=0; jj<keys.length; jj++){
+      htmlOut = htmlOut +'</td><td>'+ array[ii][keys[jj]];
+    }
+    htmlOut = htmlOut +'</td></tr>\n';
   }
   return htmlOut;
 }

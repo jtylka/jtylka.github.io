@@ -36,7 +36,7 @@
 <!-- Page Content -->
 <table style="margin: 0 auto;" id="patents_table">
 	<tr style="background-color: #20b2aa;">
-		<th style="width:25px">#</th><th style="width:300px">Title</th><th style="width:50px">Year</th>
+		<th style="width:25px">#</th><th style="width:300px">Title</th><th style="width:100px">Type</th><th style="width:50px">Year</th>
 	</tr>
 	<script>
 	$(document).ready(function(){
@@ -45,7 +45,7 @@
 	    url: "Documents/Tylka_Patents.bib",
 	    dataType: "text",
 	    success: function(data){
-	      $("#patents_table").append(printTable(parseBib(data)));
+	      $("#patents_table").append(printTable(parseBib(data),["note","year"]));
 	    }
 	  });
 	});
