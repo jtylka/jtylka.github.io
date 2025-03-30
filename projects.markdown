@@ -1,38 +1,11 @@
-<!doctype html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Joseph G. Tylka | Automation & Sustainability</title>
-	<link href="styles.css" rel="stylesheet" type="text/css">
-	<script src="Scripts/jtylka.js"></script>
-</head>
-<body>
+---
+layout: page
+title: Projects
+permalink: /projects/
+---
 
-<!-- Title -->
-<div id="header">
+<head><script src="../Scripts/jtylka.js"></script></head>
 
-<h1>Joseph G. Tylka</h1>
-
-</div>
-
-<!-- Navigation Menu -->
-<div id="menu">
-
-<table style="margin: 0 auto;">
-	<tr>
-		<script>document.write(generateNavigationMenu(window.location.href))</script>
-	</tr>
-</table>
-
-</div>
-
-<!-- Main Section -->
-<div id="content">
-
-<!-- Page Title -->
-<h2>Projects</h2>
-
-<!-- Page Content -->
 <table style="margin: 0 auto;">
 	<tr style="background-color: #20b2aa;">
 		<th style="width:400px">Project</th><th style="width:150px">Role</th><th style="width:100px">Links</th><th style="width:100px">Years</th>
@@ -113,7 +86,7 @@
 		<td>2019</td>
 	</tr>
 	<tr>
-		<td><p><a href="./Documents/Projects/Tylka_2018_WindForecasting.pdf" target="_blank">Time-Series Forecasting of Wind Velocity</a></p></td>
+		<td><p><a href="../Documents/Projects/Tylka_2018_WindForecasting.pdf" target="_blank">Time-Series Forecasting of Wind Velocity</a></p></td>
 		<td>Graduate Student</td>
 		<td><a href="https://github.com/jtylka/CEE-588-Final-Project-Report" target="_blank">TeX</a></td>
 		<td>2018</td>
@@ -128,25 +101,3 @@
 		<td>2015--2019</td>
 	</tr>
 </table>
-
-<p></p>
-
-</div>
-
-<!-- Contact Information -->
-<div id="footer">
-
-<table style="margin: 0 auto;">
-	<tr>
-		<th><a class="contact" href="Documents/Tylka_CV.pdf" target="_blank">CV</a></th>
-		<script>document.write(composeEmailAddress())</script>
-		<th><a class="contact" href="https://github.com/jtylka" target="_blank">GitHub</a></th>
-		<th><a class="contact" href="https://www.linkedin.com/in/josephgtylka/" target="_blank">LinkedIn</a></th>
-		<th><a class="contact" href="https://scholar.google.com/citations?hl=en&user=amf5PKAAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Scholar</a></th>
-	</tr>
-</table>
-
-</div>
-
-</body>
-</html>

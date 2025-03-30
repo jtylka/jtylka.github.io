@@ -1,0 +1,14 @@
+
+title: Joe Tylka
+author: Dr. Joseph G. Tylka
+description: Intelligent Industrial Systems
+email: <script>document.write(composeEmailAddress())</script>
+url: "https://jtylka.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  jtylka
+linkedin_username: josephgtylka
+googlescholar:
+  username: amf5PKAAAAAJ
+  displayname: Joseph G. Tylka
+
+# Build settings
+theme: minima
