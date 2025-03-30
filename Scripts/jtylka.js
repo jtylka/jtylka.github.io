@@ -83,6 +83,6 @@ function composeEmailAddress(){
   var mailPreFix = 'josephgt';
   var mailDomain = 'alumni.princeton.edu';
   var mailAddr = (mailPreFix + '@' + mailDomain);
-  var mailHtml = ('<th><a class="contact" href="mailto:' + mailAddr + '">Email</a></th>');
+  var mailHtml = ('<a class="u-email" href="mailto:' + mailAddr + '">Email me</a>');
   return mailHtml;
 }
