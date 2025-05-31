@@ -27,4 +27,4 @@ permalink: /patents/
 	</script>
 </table>
 
-Complete bibliographic data can be found in this <a href="../Documents/Tylka_Patents.bib" target="_blank">BibTeX file</a>. (Last updated November 24<sup>th</sup>, 2024)
+Complete bibliographic data can be found in this <a href="../Documents/Tylka_Patents.bib" target="_blank">BibTeX file</a>. (Last updated May 31<sup>st</sup>, 2025)
