@@ -27,6 +27,6 @@ permalink: /patents/
 	</script>
 </table>
 
-Complete bibliographic data can be found in this <a href="../Documents/Tylka_Patents.bib" target="_blank">BibTeX file</a>. (Last updated May 31<sup>st</sup>, 2025)
+Complete bibliographic data can be found in this <a href="../Documents/Tylka_Patents.bib" target="_blank">BibTeX file</a>. (Last updated September 1<sup>st</sup>, 2025)
 
 Any more recent patents and applications can usually be found easiest through <a href="https://patents.google.com/?inventor=Joseph+TYLKA&num=100" target="_blank">a search on Google Patents</a>.
