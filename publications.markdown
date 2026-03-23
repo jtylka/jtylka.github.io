@@ -27,4 +27,4 @@ permalink: /publications/
 	</script>
 </table>
 
-Complete bibliographic data can be found in this <a href="../Documents/Tylka_Publications.bib" target="_blank">BibTeX file</a>. (Last updated February 25<sup>th</sup>, 2024)
+Complete bibliographic data can be found in this <a href="../Documents/Tylka_Publications.bib" target="_blank">BibTeX file</a>. (Last updated March 23<sup>rd</sup>, 2026)
